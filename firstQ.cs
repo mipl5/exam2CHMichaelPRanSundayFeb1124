@@ -1,20 +1,3 @@
-static void Main(string[] args)
-{
-    int[] enchantedNums = { 3, 9, -12 };
-    int n = 10;
-    int rows = 5;
-    int from = -5;
-    int to = 45;
-    int[,] enchantedMatrix = GenerateEnchanted(rows, n, enchantedNums, from, to);
-    for (int i = 0; i < enchantedMatrix.GetLength(0); i++)
-    {
-        for (int j = 0; j < enchantedMatrix.GetLength(1); j++)
-        {
-            Console.Write("{0}\t", enchantedMatrix[i, j]);
-        }
-        Console.WriteLine();
-    }
-}
 public static int[,] GenerateEnchanted(int rows, int cols, int[] enchantedNums, int from, int to)
 {
     int[,] enchantedMat = new int[rows, cols];
