@@ -22,3 +22,17 @@ public static int CommonMax(int number)
     }
     return maxAppNum;
 }
+private static int CountApp(int numberToCount, int number)
+{
+    int counter = 0;
+    while (number > 0)
+    {
+        int num = number % 10;
+        if (numberToCount == num)
+        {
+            counter++;
+        }
+        number /= 10;
+    }
+    return counter;
+}
