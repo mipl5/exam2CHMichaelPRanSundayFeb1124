@@ -28,10 +28,11 @@ public static int[] GenerateEnchantedRow(int[]enchantedNums, int n, int from, in
         if (!CheckIndexInRandomIndexes)
             enchantedRow[i] = rnd.Next(from, to + 1);
     }
+    Initialize(randomIndexes);
     return enchantedRow;
 }
 
-public static bool IsContains(int indexToCheck, int[] randomIndexes)
+private static bool IsContains(int indexToCheck, int[] randomIndexes)
 {
     bool isExist = false;
     for (int i = 0; i < randomIndexes.Length && !isExist; i++)
@@ -43,7 +44,7 @@ public static bool IsContains(int indexToCheck, int[] randomIndexes)
 public static int[] GenerateRandomIndexesForEnchantedNums(int n, int lengthEnchatedNumsArr)
 {
     int[] randomIndexArr = new int[lengthEnchatedNumsArr];
-    Initizalize(randomIndexArr);
+    Initialize(randomIndexArr);
     for (int i = 0; i < randomIndexArr.Length; i++)
     {
         int number = GetValidIndex(n, randomIndexArr);
@@ -51,7 +52,7 @@ public static int[] GenerateRandomIndexesForEnchantedNums(int n, int lengthEncha
     }
     return randomIndexArr;
 }
-public static void Initizalize(int[] randomIndexArr)
+public static void Initialize(int[] randomIndexArr)
 {
     for (int i = 0; i < randomIndexArr.Length; i++)
     {
